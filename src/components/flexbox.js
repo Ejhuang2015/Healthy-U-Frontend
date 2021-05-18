@@ -1,72 +1,82 @@
 import React from "react";
-import './Flexbox.css';
+import Table from 'react-bootstrap/Table';
+
 
 const FlexboxPage = () => (
   <>
-    <div className="d-flex align-items-start bd-highlight mb-3 example-parent" style={{ height: '40px' }}>
-      <div className="p-2 bd-highlight col-example">Day 1</div>
-      <div className="p-2 bd-highlight col-example">Day 2</div>
-      <div className="p-2 bd-highlight col-example">Day 3</div>
-      <div className="p-2 bd-highlight col-example">Day 4</div>
-      <div className="p-2 bd-highlight col-example">Day 5</div>
-      <div className="p-2 bd-highlight col-example">Day 6</div>
-      <div className="p-2 bd-highlight col-example">Day 7</div>
-    </div>
-    <div className="d-flex align-items-start bd-highlight mb-3 example-parent" style={{ height: '40px' }}>
-      <div className="p-2 bd-highlight col-example">Day 8</div>
-      <div className="p-2 bd-highlight col-example">Day 9</div>
-      <div className="p-2 bd-highlight col-example">Day 10</div>
-      <div className="p-2 bd-highlight col-example">Day 11</div>
-      <div className="p-2 bd-highlight col-example">Day 12</div>
-      <div className="p-2 bd-highlight col-example">Day 13</div>
-      <div className="p-2 bd-highlight col-example">Day 14</div>
-    </div>
+  <Table responsive="sm">
+    <thead>
+      <tr>
+        <th>49-Day Better U Challenge</th>
 
-    <div className="d-flex align-items-start bd-highlight mb-3 example-parent" style={{ height: '40px' }}>
-      <div className="p-2 bd-highlight col-example">Day 15</div>
-      <div className="p-2 bd-highlight col-example">Day 16</div>
-      <div className="p-2 bd-highlight col-example">Day 17</div>
-      <div className="p-2 bd-highlight col-example">Day 18</div>
-      <div className="p-2 bd-highlight col-example">Day 19</div>
-      <div className="p-2 bd-highlight col-example">Day 20</div>
-      <div className="p-2 bd-highlight col-example">Day 21</div>
-    </div>
-    <div className="d-flex align-items-start bd-highlight mb-3 example-parent" style={{ height: '40px' }}>
-      <div className="p-2 bd-highlight col-example">Day 22</div>
-      <div className="p-2 bd-highlight col-example">Day 23</div>
-      <div className="p-2 bd-highlight col-example">Day 24</div>
-      <div className="p-2 bd-highlight col-example">Day 25</div>
-      <div className="p-2 bd-highlight col-example">Day 26</div>
-      <div className="p-2 bd-highlight col-example">Day 27</div>
-      <div className="p-2 bd-highlight col-example">Day 28</div>
-    </div>
-    <div className="d-flex align-items-start bd-highlight mb-3 example-parent" style={{ height: '40px' }}>
-      <div className="p-2 bd-highlight col-example">Day 29</div>
-      <div className="p-2 bd-highlight col-example">Day 30</div>
-      <div className="p-2 bd-highlight col-example">Day 31</div>
-      <div className="p-2 bd-highlight col-example">Day 32</div>
-      <div className="p-2 bd-highlight col-example">Day 33</div>
-      <div className="p-2 bd-highlight col-example">Day 34</div>
-      <div className="p-2 bd-highlight col-example">Day 35</div>
-    </div>
-    <div className="d-flex align-items-start bd-highlight mb-3 example-parent" style={{ height: '40px' }}>
-      <div className="p-2 bd-highlight col-example">Day 36</div>
-      <div className="p-2 bd-highlight col-example">Day 37</div>
-      <div className="p-2 bd-highlight col-example">Day 38</div>
-      <div className="p-2 bd-highlight col-example">Day 39</div>
-      <div className="p-2 bd-highlight col-example">Day 40</div>
-      <div className="p-2 bd-highlight col-example">Day 41</div>
-      <div className="p-2 bd-highlight col-example">Day 43</div>
-    </div>
-    <div className="d-flex align-items-start bd-highlight mb-3 example-parent" style={{ height: '40px' }}>
-      <div className="p-2 bd-highlight col-example">Day 43</div>
-      <div className="p-2 bd-highlight col-example">Day 44</div>
-      <div className="p-2 bd-highlight col-example">Day 45</div>
-      <div className="p-2 bd-highlight col-example">Day 46</div>
-      <div className="p-2 bd-highlight col-example">Day 47</div>
-      <div className="p-2 bd-highlight col-example">Day 48</div>
-      <div className="p-2 bd-highlight col-example">Day 49!!</div>
-    </div>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Day 1</td>
+        <td>Day 2</td>
+        <td>Day 3</td>
+        <td>Day 4</td>
+        <td>Day 5</td>
+        <td>Day 6</td>
+        <td>Day 7</td>
+      </tr>
+      <tr>
+        <td>Day 8</td>
+        <td>Day 9</td>
+        <td>Day 10</td>
+        <td>Day 11</td>
+        <td>Day 12</td>
+        <td>Day 13</td>
+        <td>Day 14</td>
+      </tr>
+      <tr>
+        <td>Day 15</td>
+        <td>Day 16</td>
+        <td>Day 17</td>
+        <td>Day 18</td>
+        <td>Day 19</td>
+        <td>Day 20</td>
+        <td>Day 21</td>
+      </tr>
+      <tr>
+        <td>Day 22</td>
+        <td>Day 23</td>
+        <td>Day 24</td>
+        <td>Day 25</td>
+        <td>Day 26</td>
+        <td>Day 27</td>
+        <td>Day 28</td>
+      </tr>
+      <tr>
+        <td>Day 29</td>
+        <td>Day 30</td>
+        <td>Day 31</td>
+        <td>Day 32</td>
+        <td>Day 33</td>
+        <td>Day 34</td>
+        <td>Day 35</td>
+      </tr>
+      <tr>
+        <td>Day 36</td>
+        <td>Day 37</td>
+        <td>Day 38</td>
+        <td>Day 39</td>
+        <td>Day 40</td>
+        <td>Day 41</td>
+        <td>Day 42</td>
+      </tr>
+      <tr>
+        <td>Day 43</td>
+        <td>Day 44</td>
+        <td>Day 45</td>
+        <td>Day 46</td>
+        <td>Day 47</td>
+        <td>Day 48</td>
+        <td>Day 49!</td>
+      </tr>
+    </tbody>
+  </Table>
 
   </>
 );
