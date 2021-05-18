@@ -5,7 +5,31 @@ const ExternalApi = () => {
   const [message, setMessage] = useState("");
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
-  const { getAccessTokenSilently } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
+  const { name, picture, email, sub } = user;
+
+  const callbackUserData = async () => {
+    try {
+      const token = await getAccessTokenSilently();
+      const data = {
+        id: sub,
+        name: name,
+        avatar: picture,
+        email: email
+      }
+
+      const response = await fetch(`${serverUrl}/api/callback`, {
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json'},
+        method: 'POST',
+        body: JSON.stringify(data)
+      });
+
+      const responseData = await response.json();
+      setMessage(responseData.message);
+    } catch (err) {
+      setMessage(err);
+    }
+  }
 
   const callApi = async () => {
     try {
@@ -62,6 +86,11 @@ const ExternalApi = () => {
           onClick={callSecureApi}
         >
           Get Protected Message
+        </button>
+        <button
+          type="button" className="btn btn-danger" onClick={callbackUserData}
+        >
+          Record User Data
         </button>
       </div>
       {message && (
