@@ -29,7 +29,7 @@ const ExternalApi = () => {
     } catch (err) {
       setMessage(err);
     }
-  }
+  };
 
   const callApi = async () => {
     try {
