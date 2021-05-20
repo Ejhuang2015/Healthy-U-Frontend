@@ -8,6 +8,7 @@ import Navigation from './components/Navigation/Navigation';
 import { Home, Profile, ExternalApi } from "./views";
 
 import "./app.css";
+import FlexboxPage from "./components/Flexbox/flexbox";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -26,6 +27,7 @@ const App = () => {
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/external-api" component={ExternalApi} />
         </Switch>
+        <FlexboxPage />
       </div>
       <Footer />
     </div>
