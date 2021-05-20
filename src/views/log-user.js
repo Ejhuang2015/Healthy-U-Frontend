@@ -4,7 +4,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 function LogUser() {
     const [message, setMessage] = useState("");
     const serverUrl = process.env.REACT_APP_SERVER_URL;
-
     const { user, getAccessTokenSilently } = useAuth0();
     const { name, picture, email, sub } = user;
 
