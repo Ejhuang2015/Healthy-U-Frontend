@@ -1,0 +1,7 @@
+.heading {
+    text-decoration: underline;
+    text-indent: 15px;
+    font-weight: 700;
+    /* text-shadow: 1px 1px 2px white; */
+    letter-spacing: 1px;
+}
