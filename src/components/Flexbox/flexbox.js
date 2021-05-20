@@ -1,10 +1,11 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
+import './flexbox.css';
 
 
 const FlexboxPage = () => (
   <>
-  <Table responsive="sm">
+  <Table className="table-striped" responsive="sm">
     <thead>
       <tr>
         <th>49-Day Better U Challenge</th>
@@ -73,7 +74,7 @@ const FlexboxPage = () => (
         <td>Day 46</td>
         <td>Day 47</td>
         <td>Day 48</td>
-        <td>Day 49!</td>
+        <td>Day 49</td>
       </tr>
     </tbody>
   </Table>
