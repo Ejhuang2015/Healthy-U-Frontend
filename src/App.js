@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProtectedRoute from "./auth/protected-route";
 
-import { Footer, Loading } from "./components";
+import { Footer, Loading, HabitChoices } from "./components";
 import Navigation from "./components/Navigation/Navigation";
 import { Home, Profile, LogUser } from "./views";
 
@@ -27,6 +27,7 @@ const App = () => {
           <ProtectedRoute path="/callback" component={LogUser} />
         </Switch>
         <FlexboxPage />
+        <HabitChoices />
       </div>
       <Footer />
     </div>

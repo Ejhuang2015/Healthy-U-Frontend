@@ -1,7 +1,8 @@
 .heading {
-    text-decoration: underline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-indent: 15px;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: xx-large;
     /* text-shadow: 1px 1px 2px white; */
     letter-spacing: 1px;
 }
