@@ -1,33 +1,52 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import ViewProfile from "../components/Profile/view-profile";
+import EditProfile from "../components/Profile/edit-profile";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const Profile = () => {
-  const { user } = useAuth0();
-  const { name, picture, email } = user;
+function Profile() {
+  const [userData, setUserData] = useState("");
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
+  const { user, getAccessTokenSilently } = useAuth0();
+  
+  const getUserData = async () => {
+    try {
+      const token = await getAccessTokenSilently();
+      const response = await fetch(`${serverUrl}/api/${user.sub}`, { 
+        headers: { Authorization: `Bearer ${token}` },
+        method: "GET" 
+      });
+      const userDataRes = await response.json();
+      setUserData(userDataRes); 
 
-  return (
-    <div>
-      <div className="row align-items-center profile-header">
-        <div className="col-md-2 mb-3">
-          <img
-            src={picture}
-            alt="Profile"
-            className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
-          />
-        </div>
-        <div className="col-md text-center text-md-left">
-          <h2>{name}</h2>
-          <p className="lead text-muted">{email}</p>
-        </div>
+    } catch (err) {
+      setUserData(err);
+    }
+  }
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  const [editState, setEditState] = useState(false);
+
+  function toggleEdit() {
+    setEditState(!editState);
+  }
+
+  if (editState) {
+    return (
+      <div>
+        <button onClick={toggleEdit}>Discard Changes</button>
+        <EditProfile user = {userData}/>
       </div>
-      <div className="row">
-        <pre className="col-12 text-light bg-dark p-4">
-          {JSON.stringify(user, null, 2)}
-        </pre>
+    )
+  } else {
+    return (
+      <div>
+        <button onClick={toggleEdit}>Edit Profile</button>
+        <ViewProfile user = {userData}/>
       </div>
-    </div>
-  );
+    )
+  }
 };
 
 export default Profile;

@@ -4,8 +4,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import ProtectedRoute from "./auth/protected-route";
 
 import { NavBar, Footer, Loading } from "./components";
-import Navigation from './components/Navigation/Navigation';
-import { Home, Profile, ExternalApi } from "./views";
+import Navigation from "./components/Navigation/Navigation";
+import { Home, Profile, ExternalApi, LogUser } from "./views";
 
 import "./app.css";
 import FlexboxPage from "./components/Flexbox/flexbox";
@@ -26,6 +26,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/external-api" component={ExternalApi} />
+          <ProtectedRoute path="/callback" component={LogUser} />
         </Switch>
         <FlexboxPage />
       </div>
