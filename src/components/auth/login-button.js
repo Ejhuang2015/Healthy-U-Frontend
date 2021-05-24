@@ -6,7 +6,7 @@ const LoginButton = () => {
   return (
     <button
       className="btn btn-primary btn-block"
-      onClick={() => loginWithRedirect()}
+      onClick={() => loginWithRedirect({redirectUri: `${window.location.origin}/callback`})}
     >
       Log In
     </button>
