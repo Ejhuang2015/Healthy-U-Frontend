@@ -35,7 +35,7 @@ function LogUser() {
     // Get a random health tip from database
     const getRandomTip = async () => {
         try {
-            const response = await fetch(`${serverUrl}/api/tips/random`, {
+            const response = await fetch(`${serverUrl}/api/quote/health/random`, {
                 method: 'GET',
             });
             const responseData = await response.json();
