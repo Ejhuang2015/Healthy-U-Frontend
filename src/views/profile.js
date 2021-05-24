@@ -35,14 +35,14 @@ function Profile() {
   if (editState) {
     return (
       <div>
-        <button onClick={toggleEdit}>"Discard Changes"</button>
+        <button onClick={toggleEdit}>Discard Changes</button>
         <EditProfile user = {userData}/>
       </div>
     )
   } else {
     return (
       <div>
-        <button onClick={toggleEdit}>"Edit Profile"</button>
+        <button onClick={toggleEdit}>Edit Profile</button>
         <ViewProfile user = {userData}/>
       </div>
     )
