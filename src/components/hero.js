@@ -1,4 +1,6 @@
 import React from "react";
+import '../app.css';
+
 // import './hero.css';
 
 const logo = "./images/healthy_u_logo22.png";
@@ -8,13 +10,13 @@ const Hero = () => (
     <div className="container">
       <div className="row">
         <div className="col align-self-start">
-          <h1 className="mb-4">Break Bad</h1>
+          {/* <h2 className="mb-4">Break Bad</h2> */}
         </div>
         <div className="col align-self-start">
-          <img className="mb-3 app-logo" src={logo} alt="React logo" width="120" />
+          <img className="mb-4 app-logo" src={logo} alt="React logo" width="300" />
         </div>
         <div className="col align-self-start">
-          <h1 className="mb-4">Build Healthy</h1>
+          {/* <h2 className="mb-4">Build Healthy</h2> */}
         </div>
       </div>
     </div>
