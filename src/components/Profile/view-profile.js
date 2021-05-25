@@ -1,6 +1,10 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 function ViewProfile(props) {
+  if (props.user.message) {
+    return <Redirect to="/callback/" />
+  }
 
   return (
     <div>
