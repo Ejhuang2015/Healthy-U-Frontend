@@ -12,7 +12,6 @@ export {
   Footer,
   Hero,
   Loading,
-  NavBar,
   HabitChoices,
   VeggiesCard,
   MeditationCard,
