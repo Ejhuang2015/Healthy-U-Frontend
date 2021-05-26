@@ -8,6 +8,7 @@ const options = [
   { value: "three", label: "Meditation" },
   { value: "four", label: "Drink 8 glasses of water/Day" },
   { value: "five", label: "Sleep 7-9 hours/Day" },
+  { showHeaderLabels: true },
 ];
 
 class HabitChoices extends React.Component {
