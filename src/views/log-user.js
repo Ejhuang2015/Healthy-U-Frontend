@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function LogUser() {
     const [message, setMessage] = useState("");
+    const [healthTip, setHealthTip] = useState("");
     const serverUrl = process.env.REACT_APP_SERVER_URL;
     const { user, getAccessTokenSilently } = useAuth0();
     const { name, picture, email, sub } = user;
@@ -31,16 +32,30 @@ function LogUser() {
         }
     };
 
+    // Get a random health tip from database
+    const getRandomTip = async () => {
+        try {
+            const response = await fetch(`${serverUrl}/api/tips/random`, {
+                method: 'GET',
+            });
+            const responseData = await response.json();
+            setHealthTip(responseData.message);
+        } catch (err) {
+            setHealthTip(err);
+        }
+    };
+
     // Run functions once upon render
     useEffect(() => {
         callbackUserData();
+        getRandomTip();
     }, []);
 
     // Render
     return (
         <div className="container">
             <h1>{message}</h1>
-            <p>*Some fun tip or something*</p>
+            <p>{healthTip}</p>
         </div>
     );
 };
