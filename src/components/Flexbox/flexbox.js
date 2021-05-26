@@ -5,10 +5,13 @@ import './flexbox.css';
 
 const FlexboxPage = () => (
   <>
+
+<h2>49-Day Better U Challenge</h2>
+<br/>
+
   <Table className="table-striped" responsive="sm">
     <thead>
-      <tr>
-        <th>49-Day Better U Challenge</th>
+      <tr> 
 
       </tr>
     </thead>
