@@ -36,11 +36,6 @@ class DailyList extends Component {
     }
 }
 
-ShoppingList.propTypes = {
-    getItems: PropTypes.func.isRequired,
-    item: PropTypes.object.isRequired
-}
-
 const mapStateToProps = (state) => ({
     item: state.item
 });
