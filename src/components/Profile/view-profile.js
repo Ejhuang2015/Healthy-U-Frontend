@@ -1,6 +1,10 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 function ViewProfile(props) {
+  if (props.user.message) {
+    return <Redirect to="/callback/" />
+  }
 
   return (
     <div>
@@ -16,11 +20,6 @@ function ViewProfile(props) {
           <h2>{props.user.name}</h2>
           <p className="lead text-muted">{props.user.email}</p>
         </div>
-      </div>
-      <div className="row">
-        <pre className="col-12 text-light bg-dark p-4">
-          {JSON.stringify(props.user, null, 2)}
-        </pre>
       </div>
     </div>
   );

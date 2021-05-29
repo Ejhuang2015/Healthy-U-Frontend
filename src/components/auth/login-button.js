@@ -5,10 +5,10 @@ const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
   return (
     <button
-      className="btn btn-primary btn-block"
+      className="btn btn-primary"
       onClick={() => loginWithRedirect({redirectUri: `${window.location.origin}/callback`})}
     >
-      Log In
+      Log In / Sign up
     </button>
   );
 };
