@@ -11,6 +11,7 @@ import {
   VeggiesCard,
   MeditationCard,
   HydrationCard,
+  // DailyList,
 } from "./components";
 import Navigation from "./components/Navigation/Navigation";
 import { Home, Profile, LogUser } from "./views";
@@ -49,6 +50,7 @@ const App = () => {
           </Grid>
         </div>
         <HabitChoices />
+        {/* <DailyList /> */}
       </div>
       <Footer />
     </div>

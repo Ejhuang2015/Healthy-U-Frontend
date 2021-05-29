@@ -6,15 +6,16 @@ import HabitChoices from "./HabitChoices";
 import VeggiesCard from "./VeggiesCard";
 import MeditationCard from "./MeditationCard";
 import HydrationCard from "./HydrationCard";
+import DailyList from "./DailyList";
 
 export {
   HomeContent,
   Footer,
   Hero,
   Loading,
-  NavBar,
   HabitChoices,
   VeggiesCard,
   MeditationCard,
   HydrationCard,
+  DailyList,
 };

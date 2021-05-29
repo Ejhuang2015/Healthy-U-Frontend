@@ -26,12 +26,11 @@ function EditProfile(props) {
         fData.append('avatar', formData.avatar);
         try {
             const token = await getAccessTokenSilently();
-            const response = await fetch(`${serverUrl}/api/${user.sub}`, {
+            await fetch(`${serverUrl}/api/${user.sub}`, {
                 headers: { Authorization: `Bearer ${token}` },
                 method: 'PUT',
                 body: fData
             });
-            console.log(response.message);
         } catch (err) {
             console.log(err);
         }

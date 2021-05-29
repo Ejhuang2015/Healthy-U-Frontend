@@ -21,11 +21,6 @@ function ViewProfile(props) {
           <p className="lead text-muted">{props.user.email}</p>
         </div>
       </div>
-      <div className="row">
-        <pre className="col-12 text-light bg-dark p-4">
-          {JSON.stringify(props.user, null, 2)}
-        </pre>
-      </div>
     </div>
   );
 };
