@@ -7,7 +7,7 @@ function ChallengeGrid() {
     const serverUrl = process.env.REACT_APP_SERVER_URL;
     const { user, getAccessTokenSilently } = useAuth0();
     const [challengeState, setChallengeState] = useState();
-    const [currentTileState, setCurrentTileState] = useState(false);
+    const [currentTileState, setCurrentTileState] = useState();
     const today = new Date(new Date().setHours(0, 0, 0, 0));
 
     const debouncedState = useDebounce(currentTileState, 500)
@@ -20,8 +20,12 @@ function ChallengeGrid() {
                 method: "GET"
             });
             const responseData = await latestChallenge.json();
-            console.log(responseData);
+            // Get current tile's index value
+            const creationDate = new Date(responseData.date);
+            const currentIndex = (today - creationDate)/86400000;
+            // Set data
             setChallengeState(responseData);
+            setCurrentTileState(responseData.days[currentIndex].finish);
         } catch (err) {
             console.log(err);
         }
@@ -29,13 +33,16 @@ function ChallengeGrid() {
 
     const updateTile = async () => {
         try {
+            const data = {
+                finish: debouncedState,
+                date: new Date(new Date().setHours(0, 0, 0, 0))
+            }
             const token = await getAccessTokenSilently();
-            const updateChallenge = await fetch(`${serverUrl}/api/challenge/${user.sub}`, {
-                headers: { Authorization: `Bearer ${token}` },
+            await fetch(`${serverUrl}/api/challenge/${user.sub}`, {
+                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
                 method: "PUT",
-                body: { finish: debouncedState }
+                body: JSON.stringify(data)
             });
-            console.log(updateChallenge);
         } catch (err) {
             console.log(err);
         }
@@ -47,19 +54,17 @@ function ChallengeGrid() {
 
     function mapTiles(day) {
         const tileDate = new Date(day.date);
-        console.log(tileDate);
-        console.log(today);
         // Past
         if (tileDate - today < 0) {
-            return (<div className={day.finish ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
+            return (<div key={tileDate} className={day.finish ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
         };
         // Current
         if (tileDate - today === 0) {
-            return (<div onClick={currentTileClickHandler} className={currentTileState ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
+            return (<div key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
         };
         // Future
         if (tileDate - today > 0) {
-            return (<div className="col challengeFuture"> {day.day} </div>)
+            return (<div key={tileDate} className="col challengeFuture"> {day.day} </div>)
         }
         else {
             return "Error day.date not found";
@@ -73,7 +78,9 @@ function ChallengeGrid() {
 
     // Run function only after debounce timer passes
     useEffect(() => {
-        updateTile();
+        if (currentTileState !== undefined){
+            updateTile();
+        }
     }, [debouncedState])
 
     return (
@@ -106,7 +113,7 @@ function ChallengeGrid() {
                 </div>
                 </div>
             :
-                "" 
+                "Loading..."
             }
         </div>
     );

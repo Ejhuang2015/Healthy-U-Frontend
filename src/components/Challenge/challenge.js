@@ -11,10 +11,12 @@ function Challenge() {
 
     const checkValidChallenge = async () => {
         try {
+            const data = { date: new Date(new Date().setHours(0, 0, 0, 0)) }
             const token = await getAccessTokenSilently();
             const finishedChallenge = await fetch(`${serverUrl}/api/challenge/finished/${user.sub}`, {
-                headers: { Authorization: `Bearer ${token}` },
-                method: "GET"
+                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                method: "POST",
+                body: JSON.stringify(data)
             });
             const responseData = await finishedChallenge.json();
             setChallengeState(responseData.challenge);
@@ -28,7 +30,7 @@ function Challenge() {
         checkValidChallenge();
     }, []);
 
-    return newChallengeState ? (<div><NewChallenge /></div>) : (<div ><ChallengeGrid /></div>);
+    return newChallengeState ? (<NewChallenge />) : (<ChallengeGrid />);
 };
 
 export default Challenge;

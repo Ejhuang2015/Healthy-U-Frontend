@@ -23,6 +23,7 @@ function NewChallenge() {
         const data = {
             title: formData.title,
             desc: formData.desc,
+            date: new Date(new Date().setHours(0, 0, 0, 0))
         }
         try {
             const token = await getAccessTokenSilently();
