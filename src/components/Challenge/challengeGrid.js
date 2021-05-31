@@ -56,15 +56,15 @@ function ChallengeGrid() {
         const tileDate = new Date(day.date);
         // Past
         if (tileDate - today < 0) {
-            return (<div key={tileDate} className={day.finish ? "col border border-success border-2 btn-success m-1" : "col border border-danger border-2 btn-danger m-1"}>Day {day.day}</div>)
+            return (<div key={tileDate} className={day.finish ? "col border border-success border-2 btn-success m-1 p-1" : "col border border-danger border-2 btn-danger m-1 p-1"}>Day {day.day}</div>)
         };
         // Current
         if (tileDate - today === 0) {
-            return (<button key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col border border-success border-2 btn-outline-success py-0 m-1" : "col border border-danger border-2 btn-outline-danger py-0 m-1"}>Day {day.day}</button>)
+            return (<button key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col border border-success border-2 btn-outline-success py-0 p-1 m-1" : "col border border-danger border-2 btn-outline-danger py-0 p-1 m-1"}>Day {day.day}</button>)
         };
         // Future
         if (tileDate - today > 0) {
-            return (<div key={tileDate} className="col border border-secondary border-2 btn-outline-secondary m-1">Day {day.day}</div>)
+            return (<div key={tileDate} className="col border border-secondary border-2 btn-outline-secondary m-1 p-1">Day {day.day}</div>)
         }
         else {
             return "Error day.date not found";
@@ -84,7 +84,7 @@ function ChallengeGrid() {
     }, [debouncedState])
 
     return (
-        <div>
+        <div className="p-0">
             {challengeState ?
                 <div>
                     <h1 className="text-center fw-bolder">{challengeState.title}</h1>

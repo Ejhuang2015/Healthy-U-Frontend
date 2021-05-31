@@ -32,7 +32,7 @@ function ViewProfile(props) {
         <div className="row border border-2 border-dark rounded p-3 m-1">
           <Goal />
         </div>
-        <div className="row p-3 m-1">
+        <div className="row m-1">
           <Challenge />
         </div>
       </div>
