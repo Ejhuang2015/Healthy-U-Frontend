@@ -9,8 +9,8 @@ import AuthNav from '../auth/auth-nav';
 class Navigation extends Component {
     render () {
         return (
-            <div>
-                <Navbar bg="success" expand="lg" sticky="top" variant="light">
+            <div className="navibar">
+                <Navbar className="navibar" expand="lg" sticky="top" variant="light">
                     <Navbar.Brand href="/" className="heading">Healthy-U</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
