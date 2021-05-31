@@ -53,7 +53,7 @@ function NewChallenge() {
 
     return (
         <div>
-            <h1>49-Day Better U Challenge</h1>
+            <h1 className="fw-bolder text-center">49-Day Better U Challenge</h1>
             {editState ? 
                 <form onSubmit={handleSubmit}>
                     <div className="form-floating mb-3">
@@ -70,8 +70,14 @@ function NewChallenge() {
                 </form> 
             : 
                 <div>
-                    <p>Challenge yourself to become better! Track your progress over 49 days by marking your success daily!</p>
-                    <button className="btn btn-success" onClick={handleEdit}>Ready to Make a Challenge?</button>
+                    <div className="row">
+                        <p className="text-center">Challenge yourself to become better! Track your progress over 49 days by marking your success daily!</p>
+                    </div>
+                    <div>
+                        <div className="col-sm-4 mx-auto">
+                            <button className="btn btn-block btn-success" onClick={handleEdit}>Ready to Make a Challenge?</button>
+                        </div>
+                    </div>
                 </div> 
             }
         </div>

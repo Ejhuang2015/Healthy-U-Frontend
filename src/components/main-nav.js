@@ -7,7 +7,7 @@ const MainNav = () => (
       to="/"
       exact
       className="nav-link"
-      activeClassName="router-link-exact-active"
+      activeClassName="active"
     >
       Home
     </NavLink>
@@ -15,7 +15,7 @@ const MainNav = () => (
       to="/profile"
       exact
       className="nav-link"
-      activeClassName="router-link-exact-active"
+      activeClassName="active"
     >
       Profile
     </NavLink>

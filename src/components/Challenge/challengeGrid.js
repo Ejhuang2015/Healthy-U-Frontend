@@ -22,7 +22,7 @@ function ChallengeGrid() {
             const responseData = await latestChallenge.json();
             // Get current tile's index value
             const creationDate = new Date(responseData.date);
-            const currentIndex = (today - creationDate)/86400000;
+            const currentIndex = (today - creationDate) / 86400000;
             // Set data
             setChallengeState(responseData);
             setCurrentTileState(responseData.days[currentIndex].finish);
@@ -56,15 +56,15 @@ function ChallengeGrid() {
         const tileDate = new Date(day.date);
         // Past
         if (tileDate - today < 0) {
-            return (<div key={tileDate} className={day.finish ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
+            return (<div key={tileDate} className={day.finish ? "col border border-success border-2 btn-success m-1 p-1" : "col border border-danger border-2 btn-danger m-1 p-1"}>Day {day.day}</div>)
         };
         // Current
         if (tileDate - today === 0) {
-            return (<div key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
+            return (<button key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col border border-success border-2 btn-outline-success py-0 p-1 m-1" : "col border border-danger border-2 btn-outline-danger py-0 p-1 m-1"}>Day {day.day}</button>)
         };
         // Future
         if (tileDate - today > 0) {
-            return (<div key={tileDate} className="col challengeFuture"> {day.day} </div>)
+            return (<div key={tileDate} className="col border border-secondary border-2 btn-outline-secondary m-1 p-1">Day {day.day}</div>)
         }
         else {
             return "Error day.date not found";
@@ -78,42 +78,45 @@ function ChallengeGrid() {
 
     // Run function only after debounce timer passes
     useEffect(() => {
-        if (currentTileState !== undefined){
+        if (currentTileState !== undefined) {
             updateTile();
         }
     }, [debouncedState])
 
     return (
-        <div>
+        <div className={challengeState ? "p-0" : "p-0 border border-dark border-2 rounded"}>
             {challengeState ?
                 <div>
-                <h1>{challengeState.title}</h1>
-                <div>
-                    <div className="row">
-                        {challengeState.days.slice(0, 7).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(7, 14).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(14, 21).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(21, 28).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(28, 35).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(35, 42).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(42).map(mapTiles)}
+                    <h1 className="text-center fw-bolder">{challengeState.title}</h1>
+                    <h6 className="text-center text-break">{challengeState.desc}</h6>
+                    <div className="text-center border border-2 border-dark rounded">
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(0, 7).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(7, 14).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(14, 21).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(21, 28).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(28, 35).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(35, 42).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(42).map(mapTiles)}
+                        </div>
                     </div>
                 </div>
+                :
+                <div className="spinner-border text-success" role="status">
+                    <span className="sr-only">Loading...</span>
                 </div>
-            :
-                "Loading..."
             }
         </div>
     );
