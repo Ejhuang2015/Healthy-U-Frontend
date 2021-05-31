@@ -16,7 +16,7 @@ To view demo click on this link: ([LINK](LINK))
 - First clone this repo ([GIT](https://github.com/Ejhuang2015/Healthy-U)).
 - Install Node.js on your device ([Download](https://nodejs.org/en/)).
 - Run `npm install` at the command line to install all required dependencies from package.json.
-
+- Check out the Back-End repository for more information about the API server here: [https://github.com/Ejhuang2015/Healthy-U-Backend](https://github.com/Ejhuang2015/Healthy-U-Backend)
 
 # Code Overview
 
