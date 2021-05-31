@@ -1,5 +1,6 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 import './flexbox.css';
 
 
@@ -9,7 +10,7 @@ const FlexboxPage = () => (
 <h2>49-Day Better U Challenge</h2>
 <br/>
 
-  <Table className="table-striped" responsive="sm">
+  <Table variant="success" responsive="sm" hover>
     <thead>
       <tr> 
 
@@ -17,67 +18,67 @@ const FlexboxPage = () => (
     </thead>
     <tbody>
       <tr>
-        <td>Day 1</td>
-        <td>Day 2</td>
-        <td>Day 3</td>
-        <td>Day 4</td>
-        <td>Day 5</td>
-        <td>Day 6</td>
-        <td>Day 7</td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 1</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 2</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 3</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 4</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 5</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 6</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 7</Button></div></td>
       </tr>
       <tr>
-        <td>Day 8</td>
-        <td>Day 9</td>
-        <td>Day 10</td>
-        <td>Day 11</td>
-        <td>Day 12</td>
-        <td>Day 13</td>
-        <td>Day 14</td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 8</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 9</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 10</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 11</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 12</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 13</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 14</Button></div></td>
       </tr>
       <tr>
-        <td>Day 15</td>
-        <td>Day 16</td>
-        <td>Day 17</td>
-        <td>Day 18</td>
-        <td>Day 19</td>
-        <td>Day 20</td>
-        <td>Day 21</td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 15</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 16</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 17</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 18</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 19</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 20</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 21</Button></div></td>
       </tr>
       <tr>
-        <td>Day 22</td>
-        <td>Day 23</td>
-        <td>Day 24</td>
-        <td>Day 25</td>
-        <td>Day 26</td>
-        <td>Day 27</td>
-        <td>Day 28</td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 22</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 23</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 24</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 25</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 26</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 27</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 28</Button></div></td>
       </tr>
       <tr>
-        <td>Day 29</td>
-        <td>Day 30</td>
-        <td>Day 31</td>
-        <td>Day 32</td>
-        <td>Day 33</td>
-        <td>Day 34</td>
-        <td>Day 35</td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 29</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 30</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 31</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 32</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 33</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 34</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 35</Button></div></td>
       </tr>
       <tr>
-        <td>Day 36</td>
-        <td>Day 37</td>
-        <td>Day 38</td>
-        <td>Day 39</td>
-        <td>Day 40</td>
-        <td>Day 41</td>
-        <td>Day 42</td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 36</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 37</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 38</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 39</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 40</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 41</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 42</Button></div></td>
       </tr>
       <tr>
-        <td>Day 43</td>
-        <td>Day 44</td>
-        <td>Day 45</td>
-        <td>Day 46</td>
-        <td>Day 47</td>
-        <td>Day 48</td>
-        <td>Day 49</td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 43</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 44</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 45</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 46</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 47</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 48</Button></div></td>
+        <td><div className="d-grid"><Button variant="outline-success">DAY 49</Button></div></td>
       </tr>
     </tbody>
   </Table>
