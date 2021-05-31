@@ -61,7 +61,7 @@ function Goal() {
         <div>
             {goalState ?
                 <div>
-                    <h1>Daily Goals</h1>
+                    <h1 className="text-center fw-bolder">Daily Goals and Limits</h1>
                     <div>
                         <GoalTracker checked={goalState.water} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalWater.png" item="water"/>
                         <GoalTracker checked={goalState.food} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalFood.png" item="food"/>

@@ -22,7 +22,7 @@ function ChallengeGrid() {
             const responseData = await latestChallenge.json();
             // Get current tile's index value
             const creationDate = new Date(responseData.date);
-            const currentIndex = (today - creationDate)/86400000;
+            const currentIndex = (today - creationDate) / 86400000;
             // Set data
             setChallengeState(responseData);
             setCurrentTileState(responseData.days[currentIndex].finish);
@@ -56,15 +56,15 @@ function ChallengeGrid() {
         const tileDate = new Date(day.date);
         // Past
         if (tileDate - today < 0) {
-            return (<div key={tileDate} className={day.finish ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
+            return (<div key={tileDate} className={day.finish ? "col border border-dark border-2 challengeSuccess" : "col border border-dark border-2 challengeFail"}>Day {day.day}</div>)
         };
         // Current
         if (tileDate - today === 0) {
-            return (<div key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col challengeSuccess" : "col challengeFail"}> {day.day} </div>)
+            return (<div key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col border border-dark border-2 challengeSuccess" : "col border border-dark border-2 challengeFail"}>Day {day.day}</div>)
         };
         // Future
         if (tileDate - today > 0) {
-            return (<div key={tileDate} className="col challengeFuture"> {day.day} </div>)
+            return (<div key={tileDate} className="col border border-dark border-2 challengeFuture">Day {day.day}</div>)
         }
         else {
             return "Error day.date not found";
@@ -78,7 +78,7 @@ function ChallengeGrid() {
 
     // Run function only after debounce timer passes
     useEffect(() => {
-        if (currentTileState !== undefined){
+        if (currentTileState !== undefined) {
             updateTile();
         }
     }, [debouncedState])
@@ -87,32 +87,32 @@ function ChallengeGrid() {
         <div>
             {challengeState ?
                 <div>
-                <h1>{challengeState.title}</h1>
-                <div>
-                    <div className="row">
-                        {challengeState.days.slice(0, 7).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(7, 14).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(14, 21).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(21, 28).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(28, 35).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(35, 42).map(mapTiles)}
-                    </div>
-                    <div className="row">
-                        {challengeState.days.slice(42).map(mapTiles)}
+                    <h1>{challengeState.title}</h1>
+                    <div className="text-center border border-2 border-dark">
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(0, 7).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(7, 14).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(14, 21).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(21, 28).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(28, 35).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(35, 42).map(mapTiles)}
+                        </div>
+                        <div className="row mx-auto">
+                            {challengeState.days.slice(42).map(mapTiles)}
+                        </div>
                     </div>
                 </div>
-                </div>
-            :
+                :
                 "Loading..."
             }
         </div>

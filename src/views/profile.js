@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ViewProfile from "../components/Profile/view-profile";
 import EditProfile from "../components/Profile/edit-profile";
-import Goal from "../components/Goal/goal";
-import Challenge from "../components/Challenge/challenge";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function Profile() {
@@ -35,13 +33,8 @@ function Profile() {
   }
 
     return (
-      <div>
-        <div className="text-right">
-          <button className="btn btn-warning" onClick={toggleEdit}>{editState ? "Discard Changes" : "Edit Profile"}</button>
-        </div>
-        {editState ? <EditProfile user={userData} /> : <ViewProfile user={userData} />}
-        <Goal />
-        <Challenge />
+      <div className="mt-2">
+        {editState ? <EditProfile user={userData} editButton={toggleEdit} /> : <ViewProfile user={userData} editButton={toggleEdit} />}
       </div>
     )
 };
