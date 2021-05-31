@@ -25,7 +25,7 @@ function Goal() {
                 // If last recorded date and today's date is the same, set the data
                 if (lastGoalDate - today === 0) {
                     setGoalState(responseData);
-                // else create a new daily goal
+                    // else create a new daily goal
                 } else {
                     createDailyGoal();
                 }
@@ -37,7 +37,7 @@ function Goal() {
 
     const createDailyGoal = async () => {
         const data = { date: today }
-        try { 
+        try {
             const token = await getAccessTokenSilently();
             const newGoal = await fetch(`${serverUrl}/api/goal/${user.sub}`, {
                 headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -63,13 +63,15 @@ function Goal() {
                 <div>
                     <h1 className="text-center fw-bolder">Daily Goals and Limits</h1>
                     <div>
-                        <GoalTracker checked={goalState.water} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalWater.png" item="water"/>
-                        <GoalTracker checked={goalState.food} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalFood.png" item="food"/>
-                        <GoalTracker checked={goalState.bad} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalBad.png" item="bad"/>
+                        <GoalTracker checked={goalState.water} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalWater.png" item="water" />
+                        <GoalTracker checked={goalState.food} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalFood.png" item="food" />
+                        <GoalTracker checked={goalState.bad} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalBad.png" item="bad" />
                     </div>
                 </div>
                 :
-                "Loading..."
+                <div className="spinner-border text-success" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
             }
         </div>
     )

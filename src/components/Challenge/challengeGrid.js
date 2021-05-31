@@ -84,7 +84,7 @@ function ChallengeGrid() {
     }, [debouncedState])
 
     return (
-        <div className="p-0">
+        <div className={challengeState ? "p-0" : "p-0 border border-dark border-2 rounded"}>
             {challengeState ?
                 <div>
                     <h1 className="text-center fw-bolder">{challengeState.title}</h1>
@@ -114,7 +114,9 @@ function ChallengeGrid() {
                     </div>
                 </div>
                 :
-                "Loading..."
+                <div className="spinner-border text-success" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
             }
         </div>
     );
