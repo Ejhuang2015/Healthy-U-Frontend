@@ -56,15 +56,15 @@ function ChallengeGrid() {
         const tileDate = new Date(day.date);
         // Past
         if (tileDate - today < 0) {
-            return (<div key={tileDate} className={day.finish ? "col border border-dark border-2 challengeSuccess" : "col border border-dark border-2 challengeFail"}>Day {day.day}</div>)
+            return (<div key={tileDate} className={day.finish ? "col border border-success border-2 btn-success m-1" : "col border border-danger border-2 btn-danger m-1"}>Day {day.day}</div>)
         };
         // Current
         if (tileDate - today === 0) {
-            return (<div key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col border border-dark border-2 challengeSuccess" : "col border border-dark border-2 challengeFail"}>Day {day.day}</div>)
+            return (<button key={tileDate} onClick={currentTileClickHandler} className={currentTileState ? "col border border-success border-2 btn-outline-success py-0 m-1" : "col border border-danger border-2 btn-outline-danger py-0 m-1"}>Day {day.day}</button>)
         };
         // Future
         if (tileDate - today > 0) {
-            return (<div key={tileDate} className="col border border-dark border-2 challengeFuture">Day {day.day}</div>)
+            return (<div key={tileDate} className="col border border-secondary border-2 btn-outline-secondary m-1">Day {day.day}</div>)
         }
         else {
             return "Error day.date not found";
@@ -87,8 +87,9 @@ function ChallengeGrid() {
         <div>
             {challengeState ?
                 <div>
-                    <h1>{challengeState.title}</h1>
-                    <div className="text-center border border-2 border-dark">
+                    <h1 className="text-center fw-bolder">{challengeState.title}</h1>
+                    <h6 className="text-center text-break">{challengeState.desc}</h6>
+                    <div className="text-center border border-2 border-dark rounded">
                         <div className="row mx-auto">
                             {challengeState.days.slice(0, 7).map(mapTiles)}
                         </div>
