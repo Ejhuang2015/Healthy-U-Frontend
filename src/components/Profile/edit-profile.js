@@ -26,12 +26,11 @@ function EditProfile(props) {
         fData.append('avatar', formData.avatar);
         try {
             const token = await getAccessTokenSilently();
-            const response = await fetch(`${serverUrl}/api/${user.sub}`, {
+            await fetch(`${serverUrl}/api/${user.sub}`, {
                 headers: { Authorization: `Bearer ${token}` },
                 method: 'PUT',
                 body: fData
             });
-            console.log(response.message);
         } catch (err) {
             console.log(err);
         }
@@ -55,7 +54,14 @@ function EditProfile(props) {
 
     return (
         <div>
-            <h1 className="page-heading">Edit Profile</h1>
+            <div className="row">
+                <div className="col offset-sm-2">
+                    <h1 className="page-heading text-center fw-bolder">Edit Profile</h1>
+                </div>
+                <div className="d-flex col-sm-2 align-items-center flex-row-reverse">
+                    <button onClick={props.editButton} className="btn btn-danger">Discard Changes</button>
+                </div>
+            </div>
             <form className="row g-3" onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
                     <input type="text" required className="form-control" placeholder="placeholder" name="name" onChange={handleChange} value={formData.name || ""} />
@@ -73,7 +79,7 @@ function EditProfile(props) {
                 </div>
 
                 <div className="col-12 text-center">
-                    <button type="submit" className="btn btn-outline-secondary">Update Profile</button>
+                    <button type="submit" className="btn btn-outline-success">Update Profile</button>
                 </div>
             </form>
         </div>

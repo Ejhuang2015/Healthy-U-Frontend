@@ -1,0 +1,9 @@
+.faded {
+    opacity: .5;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.goalIcon {
+    width: 75px;
+}

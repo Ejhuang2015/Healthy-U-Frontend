@@ -7,16 +7,16 @@ function Profile() {
   const [userData, setUserData] = useState("");
   const serverUrl = process.env.REACT_APP_SERVER_URL;
   const { user, getAccessTokenSilently } = useAuth0();
-  
+
   const getUserData = async () => {
     try {
       const token = await getAccessTokenSilently();
-      const response = await fetch(`${serverUrl}/api/${user.sub}`, { 
+      const response = await fetch(`${serverUrl}/api/${user.sub}`, {
         headers: { Authorization: `Bearer ${token}` },
-        method: "GET" 
+        method: "GET"
       });
       const userDataRes = await response.json();
-      setUserData(userDataRes); 
+      setUserData(userDataRes);
 
     } catch (err) {
       setUserData(err);
@@ -32,21 +32,11 @@ function Profile() {
     setEditState(!editState);
   }
 
-  if (editState) {
     return (
-      <div>
-        <button onClick={toggleEdit}>Discard Changes</button>
-        <EditProfile user = {userData}/>
+      <div className="mt-2">
+        {editState ? <EditProfile user={userData} editButton={toggleEdit} /> : <ViewProfile user={userData} editButton={toggleEdit} />}
       </div>
     )
-  } else {
-    return (
-      <div>
-        <button onClick={toggleEdit}>Edit Profile</button>
-        <ViewProfile user = {userData}/>
-      </div>
-    )
-  }
 };
 
 export default Profile;

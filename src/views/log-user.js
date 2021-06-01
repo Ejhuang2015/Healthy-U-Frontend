@@ -35,7 +35,7 @@ function LogUser() {
     // Get a random health tip from database
     const getRandomTip = async () => {
         try {
-            const response = await fetch(`${serverUrl}/api/tips/random`, {
+            const response = await fetch(`${serverUrl}/api/quote/health/random`, {
                 method: 'GET',
             });
             const responseData = await response.json();
@@ -54,8 +54,10 @@ function LogUser() {
     // Render
     return (
         <div className="container">
-            <h1>{message}</h1>
-            <p>{healthTip}</p>
+            <h1 className="fw-bolder text-center my-3">{message}</h1>
+            <div className="border rounded-3 border-success border-2 p-2">
+                <p className="text-center fs-5">{healthTip}</p>
+            </div>
         </div>
     );
 };
