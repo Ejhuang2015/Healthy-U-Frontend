@@ -58,14 +58,14 @@ function Goal() {
     }, []);
 
     return (
-        <div>
+        <div className={goalState ? "text-center" : "text-center py-3"}>
             {goalState ?
                 <div>
-                    <h1 className="text-center fw-bolder">Daily Goals and Limits</h1>
+                    <h1 className="fw-bolder">Daily Goals and Limits</h1>
                     <div>
-                        <GoalTracker checked={goalState.water} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalWater.png" item="water" />
-                        <GoalTracker checked={goalState.food} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalFood.png" item="food" />
-                        <GoalTracker checked={goalState.bad} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalBad.png" item="bad" />
+                        <GoalTracker checked={goalState.water} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalWater.png" item="water" alignment="good" />
+                        <GoalTracker checked={goalState.food} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalFood.png" item="food" alignment="good"/>
+                        <GoalTracker checked={goalState.bad} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalBad.png" item="bad" alignment="bad"/>
                     </div>
                 </div>
                 :

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import NewQuote from "../components/Quotes/NewQuote"
 
 function LogUser() {
     const [message, setMessage] = useState("");
-    const [healthTip, setHealthTip] = useState("");
     const serverUrl = process.env.REACT_APP_SERVER_URL;
     const { user, getAccessTokenSilently } = useAuth0();
     const { name, picture, email, sub } = user;
@@ -32,32 +32,26 @@ function LogUser() {
         }
     };
 
-    // Get a random health tip from database
-    const getRandomTip = async () => {
-        try {
-            const response = await fetch(`${serverUrl}/api/quote/health/random`, {
-                method: 'GET',
-            });
-            const responseData = await response.json();
-            setHealthTip(responseData.message);
-        } catch (err) {
-            setHealthTip(err);
-        }
-    };
-
     // Run functions once upon render
     useEffect(() => {
         callbackUserData();
-        getRandomTip();
     }, []);
 
     // Render
     return (
-        <div className="container">
-            <h1 className="fw-bolder text-center my-3">{message}</h1>
-            <div className="border rounded-3 border-success border-2 p-2">
-                <p className="text-center fs-5">{healthTip}</p>
-            </div>
+        <div className="container text-center mt-2">
+            {(message) ? 
+                <div> 
+                    <h1 className="fw-bolder my-3">{message}</h1>
+                    <div className="border rounded-3 border-success border-2 p-2">
+                        <NewQuote />
+                    </div>
+                </div>
+                :
+                <div className="spinner-border text-success mt-3" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            }
         </div>
     );
 };

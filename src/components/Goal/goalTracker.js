@@ -23,7 +23,7 @@ function GoalTracker(props) {
     }
 
     function mapChecked(item, index) {
-        return (<img key={index} className="col-sm mb-2 mx-1 px-0 img-fluid goalIcon faded" src={props.src} alt={`Checked ${props.item}`} />)
+        return (<img key={index} className={`col-sm mb-2 mx-1 px-0 img-fluid goalIcon ${props.alignment}`} src={props.src} alt={`Checked ${props.item}`} />)
     }
     function mapUnchecked(item, index) {
         return (<img key={index} className="col-sm mb-2 mx-1 px-0 img-fluid goalIcon" src={props.src} alt={`Unchecked ${props.item}`} />)

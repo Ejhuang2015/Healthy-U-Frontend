@@ -3,26 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Links = ({ getNewQuote, quote }) => {
   return (
-    <div className="flex row space-between grow-max ">
-      <div className="flex row">
+    <div className="row">
+
+      <div>
         <a
           href={`https://twitter.com/intent/tweet?hashtag=quote&related=freecodecamp&text=${quote.quote} -${quote.author}`}
-          className="button margin "
+          className="button margin"
           id="tweet-quote"
         >
           <FontAwesomeIcon className="f-24" icon={["fab", "twitter"]} />
         </a>
-      </div>
-      <div className="">
-        <a
-          href="#"
-          onClick={getNewQuote}
-          className="button margin montserrat"
-          id="new-quote"
-        >
+
+        <button onClick={getNewQuote} className="btn btn-success ml-4" id="new-quote">
           New Quote
-        </a>
+        </button>
       </div>
+
     </div>
   );
 };

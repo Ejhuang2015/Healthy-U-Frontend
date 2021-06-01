@@ -80,7 +80,7 @@ const useStyles = makeStyles({
    * May verry on implementation
    */
   fiCardContent: {
-    color: "#41b551",
+    color: "#cecc77",
     backgroundColor: "rgba(0,0,0,.24)",
   },
   fiCardContentTextSecondary: {
@@ -88,56 +88,50 @@ const useStyles = makeStyles({
   },
 });
 
-function MeditationCard(props) {
+function HealthCard(props) {
   const classes = useStyles();
-  if (props.number.includes(3)) {
-    return (
-      <Container className={classes.container}>
-        {/* Full Material-UI Image Card with action buttons  */}
-        <Box my={4}>
-          <Typography variant="h6" paragraph align="center">
-            Meditate to De-Stress
-          </Typography>
-          <FiCard className={classes.card}>
-            <FiCardActionArea>
-              <FiCardMedia
-                media="picture"
-                alt="Meditating figure"
-                image="./images/meditation.jpg"
-                title="Meditate"
-              />
-              <FiCardContent className={classes.fiCardContent}>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                  className={classes.custom}
-                >
-                  Meditate Every Day
-                </Typography>
-                <Typography
-                  variant="body2"
-                  className={classes.fiCardContentTextSecondary}
-                  component="p"
-                >
-                  Meditation is a scientifically researched way to change our
-                  relationship to stress using mind and body awareness, to
-                  participate in our own self-care, and to contribute
-                  wholeheartedly to our own growth and development as human
-                  beings.
-                </Typography>
-              </FiCardContent>
-            </FiCardActionArea>
-            <FiCardActions>
-              <Button size="small" color="primary">
-                Meditation tips
-              </Button>
-            </FiCardActions>
-          </FiCard>
-        </Box>
-      </Container>
-    );
-  }
+  return (
+    <Container className={classes.container}>
+      {/* Full Material-UI Image Card with action buttons  */}
+      <Box my={4}>
+        <Typography variant="h6" paragraph align="center">
+          {props.data.header}
+        </Typography>
+        <FiCard className={classes.card}>
+          <FiCardActionArea>
+            <FiCardMedia
+              media="picture"
+              alt={props.data.image.alt}
+              image={props.data.image.image}
+              title={props.data.image.title}
+            />
+            <FiCardContent className={classes.fiCardContent}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h2"
+                className={classes.custom}
+              >
+                {props.data.title}
+              </Typography>
+              <Typography
+                variant="body2"
+                className={classes.fiCardContentTextSecondary}
+                component="p"
+              >
+                {props.data.body}
+              </Typography>
+            </FiCardContent>
+          </FiCardActionArea>
+          <FiCardActions>
+            <Button size="small" color="primary" onClick={() => props.tipButton(props.data.callLink)}>
+              {props.data.footer}
+            </Button>
+          </FiCardActions>
+        </FiCard>
+      </Box>
+    </Container>
+  );
 }
 
-export default MeditationCard;
+export default HealthCard;

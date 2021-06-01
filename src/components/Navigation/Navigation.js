@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Nav.css';
-import MainNav from '../main-nav';
+import MainNav from './main-nav';
 import AuthNav from '../auth/auth-nav';
 
 class Navigation extends Component {

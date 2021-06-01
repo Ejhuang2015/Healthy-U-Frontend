@@ -1,28 +1,58 @@
-import React, { Fragment } from "react";
-import Grid from "@material-ui/core/Grid";
+import React, { Fragment, useState } from "react";
 
-import { VeggiesCard, MeditationCard, HydrationCard, Hero, HomeContent } from "../components";
+import { Hero, HomeContent } from "../components";
+import HealthCard from "../components/HealthCard/healthCard";
+import { meditationCard, hydrationCard, veggiesCard, exerciseCard } from "../components/HealthCard/cardData";
 
-const Home = () => (
-  <Fragment>
-    <Hero />
-    <hr />
-    <div>
-      <Grid container spacing={24}>
-        <Grid item md={3}>
-          <VeggiesCard />
-        </Grid>
-        <Grid item md={3}>
-          <MeditationCard />
-        </Grid>
-        <Grid item md={3}>
-          <HydrationCard />
-        </Grid>
-      </Grid>
-    </div>
-    <hr />
-    <HomeContent />
-  </Fragment>
-);
+function Home() {
+  const [healthTip, setHealthTip] = useState();
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
+
+  async function getQuote(callLink) {
+    try {
+      const response = await fetch(`${serverUrl}/api/quote${callLink}`, {
+          method: 'GET',
+      });
+      const responseData = await response.json();
+      if (callLink === "/joke/random") {
+        setHealthTip([responseData.question, <br />, <br />, responseData.answer])
+      } else {
+        setHealthTip(responseData.message);
+      }
+    } catch (err) {
+      setHealthTip(err);
+    }
+  }
+
+  return (
+    <Fragment>
+      <Hero />
+      <hr />
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-3">
+            <HealthCard data={veggiesCard} tipButton={getQuote} />
+          </div>
+          <div className="col-sm-3">
+            <HealthCard data={hydrationCard} tipButton={getQuote} />
+          </div>
+          <div className="col-sm-3">
+            <HealthCard data={meditationCard} tipButton={getQuote} />
+          </div>
+          <div className="col-sm-3">
+            <HealthCard data={exerciseCard} tipButton={getQuote} />
+          </div>
+        </div>
+      </div>
+      { healthTip ?
+        <div className="border border-2 border-success rounded text-center my-2 py-2">
+          {healthTip}
+        </div>
+        : "" }
+      <hr />
+      <HomeContent />
+    </Fragment>
+  );
+};
 
 export default Home;
