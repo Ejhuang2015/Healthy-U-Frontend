@@ -8,7 +8,7 @@ const Home = () => (
     <Hero />
     <hr />
     <div>
-      <Grid container spacing={24}>
+      <Grid container>
         <Grid item md={3}>
           <VeggiesCard />
         </Grid>

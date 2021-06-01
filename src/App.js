@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/footer";
 import { Home, Profile, LogUser } from "./views";
 
-import "./app.css";
+// import "./app.css";
 
 const App = () => {
   const { isLoading } = useAuth0();
