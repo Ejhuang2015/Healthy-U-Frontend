@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-import { Hero, HomeContent } from "../components";
+import { HomeContent } from "../components";
 import HealthCard from "../components/HealthCard/healthCard";
 import { meditationCard, hydrationCard, veggiesCard, exerciseCard } from "../components/HealthCard/cardData";
 
@@ -26,8 +26,11 @@ function Home() {
 
   return (
     <Fragment>
-      <Hero />
+      <div className="text-center">
+        <img className="mb-1 app-logo" src="./images/healthy_u_logo22.png" alt="React logo" width="300" />
+      </div>
       <hr />
+
       <div className="container">
         <div className="row">
           <div className="col-sm-3">
@@ -44,11 +47,13 @@ function Home() {
           </div>
         </div>
       </div>
+
       { healthTip ?
-        <div className="border border-2 border-success rounded text-center my-2 py-2">
+        <div id="healthTips" className="border border-2 border-success rounded text-center my-2 py-2">
           {healthTip}
         </div>
         : "" }
+
       <hr />
       <HomeContent />
     </Fragment>
