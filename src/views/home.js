@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 
 import { Hero, HomeContent } from "../components";
 import HealthCard from "../components/HealthCard/healthCard";
-import { meditationCard, hydrationCard, veggiesCard, jokesCard } from "../components/HealthCard/cardData";
+import { meditationCard, hydrationCard, veggiesCard, jokesCard, exerciseCard } from "../components/HealthCard/cardData";
 
 function Home() {
   const [healthTip, setHealthTip] = useState();
@@ -31,16 +31,19 @@ function Home() {
       <hr />
       <div>
         <Grid container>
-          <Grid item md={3}>
+          <Grid item md={4}>
             <HealthCard data={veggiesCard} tipButton={getQuote} />
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={4}>
             <HealthCard data={meditationCard} tipButton={getQuote} />
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={4}>
             <HealthCard data={hydrationCard} tipButton={getQuote} />
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={4}>
+            <HealthCard data={exerciseCard} tipButton={getQuote} />
+          </Grid>
+          <Grid item md={4}>
             <HealthCard data={jokesCard} tipButton={getQuote} />
           </Grid>
         </Grid>

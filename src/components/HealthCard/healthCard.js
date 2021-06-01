@@ -55,6 +55,10 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
+  custom: {
+    color: "#FDE541",
+    fontWeight: "bold",
+  },
   /**
    * Max Card with for demo
    * same values used in Material-Ui Card Demos
@@ -76,7 +80,7 @@ const useStyles = makeStyles({
    * May verry on implementation
    */
   fiCardContent: {
-    color: "#41b551",
+    color: "#cecc77",
     backgroundColor: "rgba(0,0,0,.24)",
   },
   fiCardContentTextSecondary: {

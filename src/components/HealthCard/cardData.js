@@ -50,4 +50,17 @@ const jokesCard = {
     callLink: "/joke/random"
 }
 
-export { meditationCard, hydrationCard, veggiesCard, jokesCard };
+const exerciseCard = {
+    header: "Get Your Exercise",
+    title: "Laugh a little",
+    body: "Being more active can help all people think, feel and sleep better and perform daily tasks more easily. Get at least 150 minutes/week of moderate-intensity aerobic activity or 75 minutes/week of vigorous aerobic activity, or a combination of both.",
+    footer: "Tips on Meditation",
+    image: {
+        image: "./images/manrunning.jpg",
+        alt: "Man running along road from above",
+        title: "Get Regular Exercise",
+    },
+    callLink: "/meditation/random"
+}
+
+export { meditationCard, hydrationCard, veggiesCard, jokesCard, exerciseCard };

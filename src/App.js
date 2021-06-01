@@ -3,18 +3,12 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProtectedRoute from "./auth/protected-route";
 
-import Grid from "@material-ui/core/Grid";
-
-import { Loading, HabitChoices} from "./components";
+import { Loading } from "./components";
 
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/footer";
 import { Home, Profile, LogUser } from "./views";
 import "./app.css";
-
-import FlexboxPage from "./components/Flexbox/flexbox";
-import NewQuote from "./components/NewQuote";
-
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -32,25 +26,6 @@ const App = () => {
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/callback" component={LogUser} />
         </Switch>
-        <FlexboxPage />
-        <div>
-          <NewQuote />
-          <HabitChoices />
-          <Grid container spacing={24}>
-            {/* <Grid item md={3}>
-              <VeggiesCard />
-            </Grid> */}
-            {/* <Grid item md={3}>
-              <MeditationCard />
-            </Grid> */}
-            {/* <Grid item md={3}>
-              <HydrationCard />
-            </Grid> */}
-            {/* <Grid item md={3}>
-              <ExerciseCard />
-            </Grid> */}
-          </Grid>
-        </div>
       </div>
       <Footer />
     </div>
