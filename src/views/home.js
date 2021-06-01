@@ -1,28 +1,59 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 
-import { VeggiesCard, MeditationCard, HydrationCard, Hero, HomeContent } from "../components";
+import { Hero, HomeContent } from "../components";
+import HealthCard from "../components/HealthCard/healthCard";
+import { meditationCard, hydrationCard, veggiesCard, jokesCard } from "../components/HealthCard/cardData";
 
-const Home = () => (
-  <Fragment>
-    <Hero />
-    <hr />
-    <div>
-      <Grid container>
-        <Grid item md={3}>
-          <VeggiesCard />
+function Home() {
+  const [healthTip, setHealthTip] = useState();
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
+
+  async function getQuote(callLink) {
+    try {
+      const response = await fetch(`${serverUrl}/api/quote${callLink}`, {
+          method: 'GET',
+      });
+      const responseData = await response.json();
+      if (callLink === "/joke/random") {
+        setHealthTip([responseData.question, <br />, <br />, responseData.answer])
+      } else {
+        setHealthTip(responseData.message);
+      }
+    } catch (err) {
+      setHealthTip(err);
+    }
+  }
+
+  return (
+    <Fragment>
+      <Hero />
+      <hr />
+      <div>
+        <Grid container>
+          <Grid item md={3}>
+            <HealthCard data={veggiesCard} tipButton={getQuote} />
+          </Grid>
+          <Grid item md={3}>
+            <HealthCard data={meditationCard} tipButton={getQuote} />
+          </Grid>
+          <Grid item md={3}>
+            <HealthCard data={hydrationCard} tipButton={getQuote} />
+          </Grid>
+          <Grid item md={3}>
+            <HealthCard data={jokesCard} tipButton={getQuote} />
+          </Grid>
         </Grid>
-        <Grid item md={3}>
-          <MeditationCard />
-        </Grid>
-        <Grid item md={3}>
-          <HydrationCard />
-        </Grid>
-      </Grid>
-    </div>
-    <hr />
-    <HomeContent />
-  </Fragment>
-);
+      </div>
+      { healthTip ?
+        <div className="border border-2 border-success rounded text-center my-2 py-2">
+          {healthTip}
+        </div>
+        : "" }
+      <hr />
+      <HomeContent />
+    </Fragment>
+  );
+};
 
 export default Home;
