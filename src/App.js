@@ -2,13 +2,19 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProtectedRoute from "./auth/protected-route";
+
 import Grid from "@material-ui/core/Grid";
-import { Footer, Loading, HabitChoices } from "./components";
+
+import { Loading, HabitChoices} from "./components";
+
 import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/footer";
 import { Home, Profile, LogUser } from "./views";
 import "./app.css";
+
 import FlexboxPage from "./components/Flexbox/flexbox";
 import NewQuote from "./components/NewQuote";
+
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -20,7 +26,7 @@ const App = () => {
   return (
     <div id="app" className="d-flex flex-column h-100">
       <Navigation />
-      <div className="container flex-grow-1">
+      <div className="container">
         <Switch>
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />

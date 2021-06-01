@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 class DailyList extends Component {
 
@@ -36,10 +36,10 @@ class DailyList extends Component {
     }
 }
 
-ShoppingList.propTypes = {
-    getItems: PropTypes.func.isRequired,
-    item: PropTypes.object.isRequired
-}
+// DailyList.propTypes = {
+//     getItems: PropTypes.func.isRequired,
+//     item: PropTypes.object.isRequired
+// }
 
 const mapStateToProps = (state) => ({
     item: state.item

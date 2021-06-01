@@ -1,0 +1,9 @@
+.challengeFail {
+    background-color: red;
+}
+.challengeSuccess {
+    background-color: green;
+}
+.challengeFuture {
+    background-color: gray;
+}
