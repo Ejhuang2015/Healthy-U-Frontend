@@ -55,6 +55,10 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
+  custom: {
+    color: "#FDE541",
+    fontWeight: "bold",
+  },
   /**
    * Max Card with for demo
    * same values used in Material-Ui Card Demos
@@ -84,49 +88,103 @@ const useStyles = makeStyles({
   },
 });
 
-function ExerciseCard() {
+function ExerciseCard(props) {
   const classes = useStyles();
-  return (
-    <Container className={classes.container}>
-      {/* Full Material-UI Image Card with action buttons  */}
-      <Box my={4}>
-        <Typography variant="h6" paragraph align="center">
-          Exercise Regularly
-        </Typography>
-        <FiCard className={classes.card}>
-          <FiCardActionArea>
-            <FiCardMedia
-              media="picture"
-              alt="Man running along road from above"
-              image="./images/manrunning.jpg"
-              title="Get Regular Exercise"
-            />
-            <FiCardContent className={classes.fiCardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                Healthy Plate
-              </Typography>
-              <Typography
-                variant="body2"
-                className={classes.fiCardContentTextSecondary}
-                component="p"
-              >
-                Being more active can help all people think, feel and sleep
-                better and perform daily tasks more easily. Get at least 150
-                minutes/week of moderate-intensity aerobic activity or 75
-                minutes/week of vigorous aerobic activity, or a combination of
-                both.
-              </Typography>
-            </FiCardContent>
-          </FiCardActionArea>
-          <FiCardActions>
-            <Button size="small" color="primary">
-              Tips on exercising
-            </Button>
-          </FiCardActions>
-        </FiCard>
-      </Box>
-    </Container>
-  );
+  if (props.number === 1) {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Exercise Regularly
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="Man running along road from above"
+                image="./images/manrunning.jpg"
+                title="Get Regular Exercise"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.custom}
+                >
+                  Get Your Exercise
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Being more active can help all people think, feel and sleep
+                  better and perform daily tasks more easily. Get at least 150
+                  minutes/week of moderate-intensity aerobic activity or 75
+                  minutes/week of vigorous aerobic activity, or a combination of
+                  both.
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+            <FiCardActions>
+              <Button size="small" color="primary">
+                Tips on Exercising
+              </Button>
+            </FiCardActions>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  } else {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Exercise Regularly
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="Man running along road from above"
+                image="./images/manrunning.jpg"
+                title="Get Regular Exercise"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.custom}
+                >
+                  Get Your Exercise
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Being more active can help all people think, feel and sleep
+                  better and perform daily tasks more easily. Get at least 150
+                  minutes/week of moderate-intensity aerobic activity or 75
+                  minutes/week of vigorous aerobic activity, or a combination of
+                  both.
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+            <FiCardActions>
+              <Button size="small" color="primary">
+                Tips on Exercising
+              </Button>
+            </FiCardActions>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  }
 }
 
 export default ExerciseCard;
