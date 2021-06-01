@@ -86,38 +86,42 @@ const useStyles = makeStyles({
 
 function HealthCard(props) {
   const classes = useStyles();
-
   return (
     <Container className={classes.container}>
       {/* Full Material-UI Image Card with action buttons  */}
       <Box my={4}>
         <Typography variant="h6" paragraph align="center">
-          { props.data.header }
+          {props.data.header}
         </Typography>
         <FiCard className={classes.card}>
           <FiCardActionArea>
             <FiCardMedia
               media="picture"
-              alt={ props.data.image.alt }
-              image={ props.data.image.image }
-              title={ props.data.image.title }
+              alt={props.data.image.alt}
+              image={props.data.image.image}
+              title={props.data.image.title}
             />
             <FiCardContent className={classes.fiCardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                { props.data.title }
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h2"
+                className={classes.custom}
+              >
+                {props.data.title}
               </Typography>
               <Typography
                 variant="body2"
                 className={classes.fiCardContentTextSecondary}
                 component="p"
               >
-                { props.data.body }
+                {props.data.body}
               </Typography>
             </FiCardContent>
           </FiCardActionArea>
           <FiCardActions>
             <Button size="small" color="primary" onClick={() => props.tipButton(props.data.callLink)}>
-              { props.data.footer }
+              {props.data.footer}
             </Button>
           </FiCardActions>
         </FiCard>
