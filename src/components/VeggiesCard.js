@@ -55,6 +55,10 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
+  custom: {
+    color: "#FDE541",
+    fontWeight: "bold",
+  },
   /**
    * Max Card with for demo
    * same values used in Material-Ui Card Demos
@@ -84,93 +88,98 @@ const useStyles = makeStyles({
   },
 });
 
-function VeggiesCard() {
+function VeggiesCard(props) {
   const classes = useStyles();
-  return (
-    <Container className={classes.container}>
-      {/* Full Material-UI Image Card with action buttons  */}
-      <Box my={4}>
-        <Typography variant="h6" paragraph align="center">
-          Make Healthy Food Choices
-        </Typography>
-        <FiCard className={classes.card}>
-          <FiCardActionArea>
-            <FiCardMedia
-              media="picture"
-              alt="Plate with healthy food choices"
-              image="./images/healthyfoods.jpg"
-              title="Healthy Plate"
-            />
-            <FiCardContent className={classes.fiCardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                Healthy Plate
-              </Typography>
-              <Typography
-                variant="body2"
-                className={classes.fiCardContentTextSecondary}
-                component="p"
-              >
-                Healthy eating choices can have positive effects that add up
-                over time. It’s important to eat a variety of fruits,
-                vegetables, grains, protein foods, and dairy and fortified soy
-                alternatives. Plan ahead, make healthy choices so every bite
-                counts.
-              </Typography>
-            </FiCardContent>
-          </FiCardActionArea>
-          <FiCardActions>
-            <Button size="small" color="primary">
-              Tips for healthy eating
-            </Button>
-          </FiCardActions>
-        </FiCard>
-      </Box>
-    </Container>
-  );
+  if (props.number.includes(2)) {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Make Healthy Food Choices
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="Plate with healthy food choices"
+                image="./images/healthyfoods.jpg"
+                title="Healthy Plate"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.custom}
+                >
+                  Healthy Plate
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Healthy eating choices can have positive effects that add up
+                  over time. It’s important to eat a variety of fruits,
+                  vegetables, grains, protein foods, and dairy and fortified soy
+                  alternatives. Plan ahead, make healthy choices so every bite
+                  counts.
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+            <FiCardActions>
+              <Button size="small" color="primary">
+                Tips for healthy eating
+              </Button>
+            </FiCardActions>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  } else {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Add healthy food choices to your habits?
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="would you like to add this habit"
+                image="./images/notInHabitList.png"
+                title="Add this habit?"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.custom}
+                >
+                  Healthy Plate
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Healthy eating choices can have positive effects that add up
+                  over time. It’s important to eat a variety of fruits,
+                  vegetables, grains, protein foods, and dairy and fortified soy
+                  alternatives. Plan ahead, make healthy choices so every bite
+                  counts.
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  }
 }
-
-// export const FiCard = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(Card);
-
-// export const FiCardActionArea = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(CardActionArea);
-
-// export const FiCardActions = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(CardActions);
-
-// export const FiCardContent = withStyles({
-//   root: {
-//     position: "relative",
-//     backgroundColor: "transparent",
-//   },
-// })(CardContent);
-
-// export const FiCardMedia = withStyles({
-//   root: {
-//     position: "absolute",
-//     top: 0,
-//     right: 0,
-//     height: "100%",
-//     width: "100%",
-//   },
-// })(CardMedia);
-
-// --- Exports --- //
-// export default {
-//   FiCard,
-//   FiCardActionArea,
-//   FiCardActions,
-//   FiCardContent,
-//   FiCardMedia,
-// };
 
 export default VeggiesCard;
