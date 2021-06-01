@@ -1,7 +1,10 @@
 # Healthy-U
 ![License](https://img.shields.io/badge/license-MIT-blue.svg) 
 
-Check it out [here](LINK)!
+Check it out [here](https://healthy-u.netlify.app/)!
+
+![Desktop-Demo](./Readme-Images/HealthyU.jpg)
+![Mobile-Demo](./Readme-Images/Mobile-Demo.jpg)
 
 ## Project Overview
 
@@ -9,7 +12,7 @@ Keeping track of habits both good and bad can be challenging. You need a way to 
 
 # View Demo  
 
-To view demo click on this link: ([LINK](LINK))
+To view demo click on this link: ([https://healthy-u.netlify.app/](https://healthy-u.netlify.app/))
 
 # Getting Started   
 
