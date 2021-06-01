@@ -4,13 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Quote = ({ quote }) => {
   return (
     <div className="temp grow-max flex col padding shadow" id="quote-box">
-      <div className="quote margin">
-        <p id="text" className="f-24 montserrat">
-          <FontAwesomeIcon icon="quote-left" /> {quote.quote}
+
+      <div className="my-2">
+        <p>
+          <FontAwesomeIcon icon="quote-left" /> {quote.quote} <FontAwesomeIcon icon="quote-right" />
         </p>
       </div>
-      <div className="author margin">
-        <span id="author" className="montserrat">
+
+      <div className="my-2">
+        <span>
           - {quote.author}
         </span>
       </div>

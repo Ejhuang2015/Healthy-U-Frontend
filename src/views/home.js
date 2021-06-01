@@ -1,9 +1,8 @@
 import React, { Fragment, useState } from "react";
-import Grid from "@material-ui/core/Grid";
 
 import { Hero, HomeContent } from "../components";
 import HealthCard from "../components/HealthCard/healthCard";
-import { meditationCard, hydrationCard, veggiesCard, jokesCard, exerciseCard } from "../components/HealthCard/cardData";
+import { meditationCard, hydrationCard, veggiesCard, exerciseCard } from "../components/HealthCard/cardData";
 
 function Home() {
   const [healthTip, setHealthTip] = useState();
@@ -29,24 +28,21 @@ function Home() {
     <Fragment>
       <Hero />
       <hr />
-      <div>
-        <Grid container>
-          <Grid item md={4}>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-3">
             <HealthCard data={veggiesCard} tipButton={getQuote} />
-          </Grid>
-          <Grid item md={4}>
-            <HealthCard data={meditationCard} tipButton={getQuote} />
-          </Grid>
-          <Grid item md={4}>
+          </div>
+          <div className="col-sm-3">
             <HealthCard data={hydrationCard} tipButton={getQuote} />
-          </Grid>
-          <Grid item md={4}>
+          </div>
+          <div className="col-sm-3">
+            <HealthCard data={meditationCard} tipButton={getQuote} />
+          </div>
+          <div className="col-sm-3">
             <HealthCard data={exerciseCard} tipButton={getQuote} />
-          </Grid>
-          <Grid item md={4}>
-            <HealthCard data={jokesCard} tipButton={getQuote} />
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </div>
       { healthTip ?
         <div className="border border-2 border-success rounded text-center my-2 py-2">

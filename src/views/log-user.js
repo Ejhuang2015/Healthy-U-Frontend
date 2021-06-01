@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import NewQuote from "../components/Quotes/NewQuote"
 
 function LogUser() {
     const [message, setMessage] = useState("");
@@ -58,8 +59,9 @@ function LogUser() {
                 <div> 
                     <h1 className="fw-bolder my-3">{message}</h1>
                     <div className="border rounded-3 border-success border-2 p-2">
-                        <p className="fs-5">{healthTip}</p>
-                    </div>        
+                        {/* <p className="fs-5">{healthTip}</p> */}
+                        <NewQuote />
+                    </div>
                 </div>
                 :
                 <div className="spinner-border text-success mt-3" role="status">

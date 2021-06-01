@@ -1,8 +1,8 @@
 const meditationCard = {
     header: "Meditate to De-Stress",
-    title: "Meditate Every Day",
+    title: "Meditate Daily",
     body: "Meditation is a scientifically researched way to change our relationship to stress using mind and body awareness, to participate in our own self-care, and to contribute wholeheartedly to our own growth and development as human beings.",
-    footer: "Meditation tips",
+    footer: "Meditative Quotes",
     image: {
         image: "./images/meditation.jpg",
         alt: "Meditating figure",
@@ -15,7 +15,7 @@ const hydrationCard = {
     header: "Stay Hydrated!",
     title: "Stay Hydrated",
     body: "Your body depends on water to survive. Every cell, tissue, and organ in your body needs water to work properly. For example, your body uses water to maintain its temperature, remove waste, and lubricate your joints.",
-    footer: "Tips on Nutrition",
+    footer: "Nutritional Facts",
     image: {
         image: "./images/waterpouring.jpg",
         alt: "Water pouring",
@@ -25,10 +25,10 @@ const hydrationCard = {
 }
 
 const veggiesCard = {
-    header: "Make Healthy Food Choices",
+    header: "Healthy Food Choices",
     title: "Healthy Plate",
     body: "Healthy eating choices can have positive effects that add up over time. It’s important to eat a variety of fruits, vegetables, grains, protein foods, and dairy and fortified soy alternatives. Plan ahead, make healthy choices so every bite counts.",
-    footer: "Tips on Nutrition",
+    footer: "Nutritional Facts",
     image: {
         image: "./images/healthyfoods.jpg",
         alt: "Plate with healthy food choices",
@@ -51,10 +51,10 @@ const jokesCard = {
 }
 
 const exerciseCard = {
-    header: "Get Your Exercise",
-    title: "Laugh a little",
+    header: "Exercise Regularly",
+    title: "Be Active",
     body: "Being more active can help all people think, feel and sleep better and perform daily tasks more easily. Get at least 150 minutes/week of moderate-intensity aerobic activity or 75 minutes/week of vigorous aerobic activity, or a combination of both.",
-    footer: "Tips on Meditation",
+    footer: "Meditative Quotes",
     image: {
         image: "./images/manrunning.jpg",
         alt: "Man running along road from above",
