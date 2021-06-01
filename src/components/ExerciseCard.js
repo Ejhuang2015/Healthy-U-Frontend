@@ -80,7 +80,7 @@ const useStyles = makeStyles({
    * May verry on implementation
    */
   fiCardContent: {
-    color: "#41b551",
+    color: "#cecc77",
     backgroundColor: "rgba(0,0,0,.24)",
   },
   fiCardContentTextSecondary: {
@@ -88,23 +88,23 @@ const useStyles = makeStyles({
   },
 });
 
-function VeggiesCard(props) {
+function ExerciseCard(props) {
   const classes = useStyles();
-  if (props.number.includes(2)) {
+  if (props.number === 1) {
     return (
       <Container className={classes.container}>
         {/* Full Material-UI Image Card with action buttons  */}
         <Box my={4}>
           <Typography variant="h6" paragraph align="center">
-            Make Healthy Food Choices
+            Exercise Regularly
           </Typography>
           <FiCard className={classes.card}>
             <FiCardActionArea>
               <FiCardMedia
                 media="picture"
-                alt="Plate with healthy food choices"
-                image="./images/healthyfoods.jpg"
-                title="Healthy Plate"
+                alt="Man running along road from above"
+                image="./images/manrunning.jpg"
+                title="Get Regular Exercise"
               />
               <FiCardContent className={classes.fiCardContent}>
                 <Typography
@@ -113,24 +113,24 @@ function VeggiesCard(props) {
                   component="h2"
                   className={classes.custom}
                 >
-                  Healthy Plate
+                  Get Your Exercise
                 </Typography>
                 <Typography
                   variant="body2"
                   className={classes.fiCardContentTextSecondary}
                   component="p"
                 >
-                  Healthy eating choices can have positive effects that add up
-                  over time. It’s important to eat a variety of fruits,
-                  vegetables, grains, protein foods, and dairy and fortified soy
-                  alternatives. Plan ahead, make healthy choices so every bite
-                  counts.
+                  Being more active can help all people think, feel and sleep
+                  better and perform daily tasks more easily. Get at least 150
+                  minutes/week of moderate-intensity aerobic activity or 75
+                  minutes/week of vigorous aerobic activity, or a combination of
+                  both.
                 </Typography>
               </FiCardContent>
             </FiCardActionArea>
             <FiCardActions>
               <Button size="small" color="primary">
-                Tips for healthy eating
+                Tips on Exercising
               </Button>
             </FiCardActions>
           </FiCard>
@@ -143,15 +143,15 @@ function VeggiesCard(props) {
         {/* Full Material-UI Image Card with action buttons  */}
         <Box my={4}>
           <Typography variant="h6" paragraph align="center">
-            Add healthy food choices to your habits?
+            Exercise Regularly
           </Typography>
           <FiCard className={classes.card}>
             <FiCardActionArea>
               <FiCardMedia
                 media="picture"
-                alt="would you like to add this habit"
-                image="./images/notInHabitList.png"
-                title="Add this habit?"
+                alt="Man running along road from above"
+                image="./images/manrunning.jpg"
+                title="Get Regular Exercise"
               />
               <FiCardContent className={classes.fiCardContent}>
                 <Typography
@@ -160,21 +160,26 @@ function VeggiesCard(props) {
                   component="h2"
                   className={classes.custom}
                 >
-                  Healthy Plate
+                  Get Your Exercise
                 </Typography>
                 <Typography
                   variant="body2"
                   className={classes.fiCardContentTextSecondary}
                   component="p"
                 >
-                  Healthy eating choices can have positive effects that add up
-                  over time. It’s important to eat a variety of fruits,
-                  vegetables, grains, protein foods, and dairy and fortified soy
-                  alternatives. Plan ahead, make healthy choices so every bite
-                  counts.
+                  Being more active can help all people think, feel and sleep
+                  better and perform daily tasks more easily. Get at least 150
+                  minutes/week of moderate-intensity aerobic activity or 75
+                  minutes/week of vigorous aerobic activity, or a combination of
+                  both.
                 </Typography>
               </FiCardContent>
             </FiCardActionArea>
+            <FiCardActions>
+              <Button size="small" color="primary">
+                Tips on Exercising
+              </Button>
+            </FiCardActions>
           </FiCard>
         </Box>
       </Container>
@@ -182,4 +187,4 @@ function VeggiesCard(props) {
   }
 }
 
-export default VeggiesCard;
+export default ExerciseCard;

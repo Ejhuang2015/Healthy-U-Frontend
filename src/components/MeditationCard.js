@@ -55,6 +55,10 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
+  custom: {
+    color: "#FDE541",
+    fontWeight: "bold",
+  },
   /**
    * Max Card with for demo
    * same values used in Material-Ui Card Demos
@@ -84,93 +88,56 @@ const useStyles = makeStyles({
   },
 });
 
-function MeditationCard() {
+function MeditationCard(props) {
   const classes = useStyles();
-  return (
-    <Container className={classes.container}>
-      {/* Full Material-UI Image Card with action buttons  */}
-      <Box my={4}>
-        <Typography variant="h6" paragraph align="center">
-          Meditate to De-Stress
-        </Typography>
-        <FiCard className={classes.card}>
-          <FiCardActionArea>
-            <FiCardMedia
-              media="picture"
-              alt="Meditating figure"
-              image="./images/meditation.jpg"
-              title="Meditate"
-            />
-            <FiCardContent className={classes.fiCardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                Meditate Every Day
-              </Typography>
-              <Typography
-                variant="body2"
-                className={classes.fiCardContentTextSecondary}
-                component="p"
-              >
-                Meditation is a scientifically researched way to change our
-                relationship to stress using mind and body awareness, to
-                participate in our own self-care, and to contribute
-                wholeheartedly to our own growth and development as human
-                beings.
-              </Typography>
-            </FiCardContent>
-          </FiCardActionArea>
-          <FiCardActions>
-            <Button size="small" color="primary">
-              Meditation tips
-            </Button>
-          </FiCardActions>
-        </FiCard>
-      </Box>
-    </Container>
-  );
+  if (props.number.includes(3)) {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Meditate to De-Stress
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="Meditating figure"
+                image="./images/meditation.jpg"
+                title="Meditate"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.custom}
+                >
+                  Meditate Every Day
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Meditation is a scientifically researched way to change our
+                  relationship to stress using mind and body awareness, to
+                  participate in our own self-care, and to contribute
+                  wholeheartedly to our own growth and development as human
+                  beings.
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+            <FiCardActions>
+              <Button size="small" color="primary">
+                Meditation tips
+              </Button>
+            </FiCardActions>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  }
 }
-
-// export const FiCard = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(Card);
-
-// export const FiCardActionArea = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(CardActionArea);
-
-// export const FiCardActions = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(CardActions);
-
-// export const FiCardContent = withStyles({
-//   root: {
-//     position: "relative",
-//     backgroundColor: "transparent",
-//   },
-// })(CardContent);
-
-// export const FiCardMedia = withStyles({
-//   root: {
-//     position: "absolute",
-//     top: 0,
-//     right: 0,
-//     height: "100%",
-//     width: "100%",
-//   },
-// })(CardMedia);
-
-// --- Exports --- //
-// export default {
-//   FiCard,
-//   FiCardActionArea,
-//   FiCardActions,
-//   FiCardContent,
-//   FiCardMedia,
-// };
 
 export default MeditationCard;

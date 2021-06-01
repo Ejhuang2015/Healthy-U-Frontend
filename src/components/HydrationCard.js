@@ -55,6 +55,10 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
+  custom: {
+    color: "#FDE541",
+    fontWeight: "bold",
+  },
   /**
    * Max Card with for demo
    * same values used in Material-Ui Card Demos
@@ -84,92 +88,93 @@ const useStyles = makeStyles({
   },
 });
 
-function HydrationCard() {
+function HydrationCard(props) {
   const classes = useStyles();
-  return (
-    <Container className={classes.container}>
-      {/* Full Material-UI Image Card with action buttons  */}
-      <Box my={4}>
-        <Typography variant="h6" paragraph align="center">
-          Stay Hydrated!
-        </Typography>
-        <FiCard className={classes.card}>
-          <FiCardActionArea>
-            <FiCardMedia
-              media="picture"
-              alt="Water pouring"
-              image="./images/waterpouring.jpg"
-              title="Stay Hydrated"
-            />
-            <FiCardContent className={classes.fiCardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                Stay Hydrated
-              </Typography>
-              <Typography
-                variant="body2"
-                className={classes.fiCardContentTextSecondary}
-                component="p"
-              >
-                Your body depends on water to survive. Every cell, tissue, and
-                organ in your body needs water to work properly. For example,
-                your body uses water to maintain its temperature, remove waste,
-                and lubricate your joints.
-              </Typography>
-            </FiCardContent>
-          </FiCardActionArea>
-          <FiCardActions>
-            <Button size="small" color="primary">
-              Tips on Staying Hydrated
-            </Button>
-          </FiCardActions>
-        </FiCard>
-      </Box>
-    </Container>
-  );
+  if (props.number.includes(4)) {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Stay Hydrated!
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="Water pouring"
+                image="./images/waterpouring.jpg"
+                title="Stay Hydrated"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.custom}
+                >
+                  Stay Hydrated
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Your body depends on water to survive. Every cell, tissue, and
+                  organ in your body needs water to work properly. For example,
+                  your body uses water to maintain its temperature, remove
+                  waste, and lubricate your joints.
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+            <FiCardActions>
+              <Button size="small" color="primary">
+                Tips on Staying Hydrated
+              </Button>
+            </FiCardActions>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  } else {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Stay Hydrated!
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="Water pouring"
+                image="./images/waterpouring.jpg"
+                title="Stay Hydrated"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.custom}
+                >
+                  Stay Hydrated
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Would you like to add this habit?
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  }
 }
-
-// export const FiCard = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(Card);
-
-// export const FiCardActionArea = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(CardActionArea);
-
-// export const FiCardActions = withStyles({
-//   root: {
-//     position: "relative",
-//   },
-// })(CardActions);
-
-// export const FiCardContent = withStyles({
-//   root: {
-//     position: "relative",
-//     backgroundColor: "transparent",
-//   },
-// })(CardContent);
-
-// export const FiCardMedia = withStyles({
-//   root: {
-//     position: "absolute",
-//     top: 0,
-//     right: 0,
-//     height: "100%",
-//     width: "100%",
-//   },
-// })(CardMedia);
-
-// --- Exports --- //
-// export default {
-//   FiCard,
-//   FiCardActionArea,
-//   FiCardActions,
-//   FiCardContent,
-//   FiCardMedia,
-// };
 
 export default HydrationCard;
