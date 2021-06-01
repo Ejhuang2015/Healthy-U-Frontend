@@ -63,9 +63,9 @@ function Goal() {
                 <div>
                     <h1 className="fw-bolder">Daily Goals and Limits</h1>
                     <div>
-                        <GoalTracker checked={goalState.water} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalWater.png" item="water" alignment="good" />
-                        <GoalTracker checked={goalState.food} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalFood.png" item="food" alignment="good"/>
-                        <GoalTracker checked={goalState.bad} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalBad.png" item="bad" alignment="bad"/>
+                        <GoalTracker checked={goalState.water} id={goalState._id} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalWater.png" item="water" alignment="good" />
+                        <GoalTracker checked={goalState.food} id={goalState._id} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalFood.png" item="food" alignment="good"/>
+                        <GoalTracker checked={goalState.bad} id={goalState._id} src="https://healthy-u.s3.us-east-2.amazonaws.com/goalBad.png" item="bad" alignment="bad"/>
                     </div>
                 </div>
                 :

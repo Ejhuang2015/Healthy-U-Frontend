@@ -32,7 +32,7 @@ function GoalTracker(props) {
     async function updateDatabase() {
         try {
             const token = await getAccessTokenSilently();
-            await fetch(`${serverUrl}/api/goal/${user.sub}`, {
+            await fetch(`${serverUrl}/api/goal/${props.id}`, {
                 headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
                 method: "PUT",
                 body: JSON.stringify({ key: props.item, value: debouncedState })
