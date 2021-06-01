@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-import { Hero, HomeContent } from "../components";
+import { HomeContent } from "../components";
 import HealthCard from "../components/HealthCard/healthCard";
 import { meditationCard, hydrationCard, veggiesCard, exerciseCard } from "../components/HealthCard/cardData";
 
