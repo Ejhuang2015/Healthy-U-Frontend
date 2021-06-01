@@ -1,7 +1,12 @@
-.faded {
+.good, .bad {
     opacity: .5;
-    background-color: green;
     border-radius: 50%;
+}
+.good {
+    background-color: green;
+}
+.bad {
+    background-color: red;
 }
 
 .goalIcon {

@@ -84,7 +84,7 @@ function ChallengeGrid() {
     }, [debouncedState])
 
     return (
-        <div className={challengeState ? "p-0" : "p-0 border border-dark border-2 rounded"}>
+        <div className={challengeState ? "p-0" : "py-3 border border-dark border-2 rounded text-center"}>
             {challengeState ?
                 <div>
                     <h1 className="text-center fw-bolder">{challengeState.title}</h1>

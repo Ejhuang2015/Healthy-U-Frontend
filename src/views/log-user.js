@@ -53,11 +53,19 @@ function LogUser() {
 
     // Render
     return (
-        <div className="container">
-            <h1 className="fw-bolder text-center my-3">{message}</h1>
-            <div className="border rounded-3 border-success border-2 p-2">
-                <p className="text-center fs-5">{healthTip}</p>
-            </div>
+        <div className="container text-center mt-2">
+            {(healthTip || message) ? 
+                <div> 
+                    <h1 className="fw-bolder my-3">{message}</h1>
+                    <div className="border rounded-3 border-success border-2 p-2">
+                        <p className="fs-5">{healthTip}</p>
+                    </div>        
+                </div>
+                :
+                <div className="spinner-border text-success mt-3" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            }
         </div>
     );
 };
