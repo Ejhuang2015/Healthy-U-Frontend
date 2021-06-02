@@ -12,7 +12,6 @@ const options = [
   { value: "two", label: "Eating 5-9 Veggies/Day" },
   { value: "three", label: "Meditation" },
   { value: "four", label: "Drink 8 glasses of water/Day" },
-  { value: "five", label: "Sleep 7-9 hours/Day" },
 ];
 
 const styleObj = {
@@ -43,16 +42,16 @@ class HabitChoices extends React.Component {
           onChange={this.onChange}
         />
         <Grid item md={3}>
-          <MeditationCard number="3" />
+          <MeditationCard number={this.state.selected} />
         </Grid>
         <Grid item md={3}>
-          <HydrationCard number="4" />
+          <HydrationCard number={this.state.selected} />
         </Grid>
         <Grid item md={3}>
-          <ExerciseCard number="1" />
+          <ExerciseCard number={this.state.selected} />
         </Grid>
         <Grid item md={3}>
-          <VeggiesCard number="2" />
+          <VeggiesCard number={this.state.selected} />
         </Grid>
       </div>
     );

@@ -11,6 +11,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
+// import React, { useState } from 'react';
 
 export const FiCard = withStyles({
   root: {
@@ -90,7 +91,8 @@ const useStyles = makeStyles({
 
 function VeggiesCard(props) {
   const classes = useStyles();
-  if (props.number.includes(2)) {
+
+  if (props.number.includes("two")) {
     return (
       <Container className={classes.container}>
         {/* Full Material-UI Image Card with action buttons  */}
@@ -143,7 +145,7 @@ function VeggiesCard(props) {
         {/* Full Material-UI Image Card with action buttons  */}
         <Box my={4}>
           <Typography variant="h6" paragraph align="center">
-            Add healthy food choices to your habits?
+            Eat 5-9 veggies every day
           </Typography>
           <FiCard className={classes.card}>
             <FiCardActionArea>
@@ -167,11 +169,7 @@ function VeggiesCard(props) {
                   className={classes.fiCardContentTextSecondary}
                   component="p"
                 >
-                  Healthy eating choices can have positive effects that add up
-                  over time. It’s important to eat a variety of fruits,
-                  vegetables, grains, protein foods, and dairy and fortified soy
-                  alternatives. Plan ahead, make healthy choices so every bite
-                  counts.
+                  Not in your daily habit list.
                 </Typography>
               </FiCardContent>
             </FiCardActionArea>

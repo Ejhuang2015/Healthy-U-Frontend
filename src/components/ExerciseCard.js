@@ -90,7 +90,7 @@ const useStyles = makeStyles({
 
 function ExerciseCard(props) {
   const classes = useStyles();
-  if (props.number === 1) {
+  if (props.number.includes("one")) {
     return (
       <Container className={classes.container}>
         {/* Full Material-UI Image Card with action buttons  */}
@@ -150,7 +150,7 @@ function ExerciseCard(props) {
               <FiCardMedia
                 media="picture"
                 alt="Man running along road from above"
-                image="./images/manrunning.jpg"
+                image="./images/manrunningNotInYourList.jpg"
                 title="Get Regular Exercise"
               />
               <FiCardContent className={classes.fiCardContent}>
@@ -160,26 +160,17 @@ function ExerciseCard(props) {
                   component="h2"
                   className={classes.custom}
                 >
-                  Get Your Exercise
+                  Get Your Exercise!
                 </Typography>
                 <Typography
                   variant="body2"
                   className={classes.fiCardContentTextSecondary}
                   component="p"
                 >
-                  Being more active can help all people think, feel and sleep
-                  better and perform daily tasks more easily. Get at least 150
-                  minutes/week of moderate-intensity aerobic activity or 75
-                  minutes/week of vigorous aerobic activity, or a combination of
-                  both.
+                  Not in your daily habit list.
                 </Typography>
               </FiCardContent>
             </FiCardActionArea>
-            <FiCardActions>
-              <Button size="small" color="primary">
-                Tips on Exercising
-              </Button>
-            </FiCardActions>
           </FiCard>
         </Box>
       </Container>

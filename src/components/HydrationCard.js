@@ -90,7 +90,7 @@ const useStyles = makeStyles({
 
 function HydrationCard(props) {
   const classes = useStyles();
-  if (props.number.includes(4)) {
+  if (props.number.includes("four")) {
     return (
       <Container className={classes.container}>
         {/* Full Material-UI Image Card with action buttons  */}
@@ -149,7 +149,7 @@ function HydrationCard(props) {
               <FiCardMedia
                 media="picture"
                 alt="Water pouring"
-                image="./images/waterpouring.jpg"
+                image="./images/waterpouringNotInYourList.jpg"
                 title="Stay Hydrated"
               />
               <FiCardContent className={classes.fiCardContent}>
@@ -166,7 +166,7 @@ function HydrationCard(props) {
                   className={classes.fiCardContentTextSecondary}
                   component="p"
                 >
-                  Would you like to add this habit?
+                  Not in your daily habit list
                 </Typography>
               </FiCardContent>
             </FiCardActionArea>

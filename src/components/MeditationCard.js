@@ -90,7 +90,7 @@ const useStyles = makeStyles({
 
 function MeditationCard(props) {
   const classes = useStyles();
-  if (props.number.includes(3)) {
+  if (props.number.includes("three")) {
     return (
       <Container className={classes.container}>
         {/* Full Material-UI Image Card with action buttons  */}
@@ -133,6 +133,44 @@ function MeditationCard(props) {
                 Meditation tips
               </Button>
             </FiCardActions>
+          </FiCard>
+        </Box>
+      </Container>
+    );
+  } else {
+    return (
+      <Container className={classes.container}>
+        {/* Full Material-UI Image Card with action buttons  */}
+        <Box my={4}>
+          <Typography variant="h6" paragraph align="center">
+            Reduce Your Stress
+          </Typography>
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="would you like to add this habit"
+                image="./images/meditationNotInYourList.jpg"
+                title="Add this habit?"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="2"
+                  className={classes.custom}
+                >
+                  Meditation
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.fiCardContentTextSecondary}
+                  component="p"
+                >
+                  Not in your daily habit list.
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
           </FiCard>
         </Box>
       </Container>
